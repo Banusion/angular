@@ -1,0 +1,23 @@
+<div *ngIf="deployment">
+  <h2>{{deployment.id}} details!</h2>
+  <div><label>id: </label>{{deployment.id}}</div>
+  <div><label>diagnostic: </label>{{deployment.diagnosticCode}}</div>
+  <div><label>diagnostic verbose: </label>{{deployment.diagnosticVerbose}}</div>
+  <div><label>statut: </label>{{deployment.status}}</div>
+  <div><label>information statut: </label>{{deployment.statusVerbose}}</div>
+  <!--<label>contrats: </label>
+  <div class="policies">
+    <li *ngFor="let policy of customer.policies"
+        (click)="onSelect(policy)"
+        [class.selected]="policy === selectedPolicy">
+      <span class="badge">{{policy.id}}</span>
+    </li>
+  </div>-->
+</div>
+<button (click)="goBack()">Back</button>
+<!--<div *ngIf="selectedDeployment">
+  <h2>
+    {{selectedPolicy.id | uppercase}} is my best policy
+  </h2>
+  <button (click)="goDetail()">View Details</button>
+</div>-->

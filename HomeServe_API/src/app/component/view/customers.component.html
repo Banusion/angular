@@ -1,0 +1,15 @@
+<h2>My Customers</h2>
+<ul class="customers">
+  <li *ngFor="let customer of customers"
+      (click)="onSelect(customer)"
+      [class.selected]="customer === selectedCustomer">
+    <span class="badge">{{customer.id}}</span> {{customer.lastName }} {{ customer.firstName }}
+  </li>
+  <div *ngIf="selectedCustomer">
+    <h2>
+      {{selectedCustomer.firstName | uppercase}} is my best customer
+    </h2>
+    <button (click)="goDetail()">View Details</button>
+  </div>
+</ul>
+<customer-search></customer-search>

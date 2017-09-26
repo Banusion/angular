@@ -1,1 +1,6 @@
-node-modules
+heroes/node_modules/
+quickstart/
+my-app/node_modules/
+HomeServe_API/node_modules/
+HomeServe_API/src/env.json
+HomeServe_API/src/config.development.json

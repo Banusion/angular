@@ -1,0 +1,9 @@
+<div *ngIf="policy">
+  <h2>{{policy.id}} details!</h2>
+  <div><label>id: </label>{{policy.id}}</div>
+  <div><label>code produit: </label>{{policy.productCode}}</div>
+  <div><label>nom produit: </label>{{policy.productName}}</div>
+  <div><label>statut: </label>{{policy.statusVerbose}}</div>
+  <div><label>partenaire: </label>{{policy.partnerVerbose}}</div>
+</div>
+<button (click)="goBack()">Back</button>

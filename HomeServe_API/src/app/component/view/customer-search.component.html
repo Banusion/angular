@@ -1,0 +1,11 @@
+<div id="search-component">
+  <h4>Customer Search</h4>
+  <!--<button (click)="getCustomers()">RAZ</button>-->
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  <div>
+    <div *ngFor="let customer of customers | async"
+         (click)="goDetail(customer)" class="search-result" >
+      {{customer.id}} {{customer.lastName}} {{customer.firstName}}
+    </div>
+  </div>
+</div>

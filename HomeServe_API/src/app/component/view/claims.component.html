@@ -1,0 +1,23 @@
+<h2>My Claims</h2>
+<ul class="claims">
+  <li *ngFor="let claim of claims"
+      (click)="onSelect(claim)"
+      [class.selected]="claim === selectedClaim">
+    <span class="badge">{{claim.id}}</span> Policy:  {{ claim.policy.id }}
+  </li>
+  <div *ngIf="selectedClaim">
+    <h2>
+      {{selectedClaim.id | uppercase}} is my best claim
+      <div class="deployments">
+        <li *ngFor="let deployment of selectedClaim.deployments"
+            (click)="onSelectDeployment(deployment)"
+            [class.selected]="deployment === selectedDeployment">
+          <span class="badge">{{deployment.id}}</span>
+        </li>
+      </div>
+      <div *ngIf="selectedDeployment">
+        <button (click)="goDetail()">View Details</button>
+      </div>
+    </h2>
+  </div>
+</ul>

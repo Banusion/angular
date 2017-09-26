@@ -1,0 +1,14 @@
+<h2>My Policies</h2>
+<ul class="policies">
+  <li *ngFor="let policy of policies"
+      (click)="onSelect(policy)"
+      [class.selected]="policy === selectedPolicy">
+    <span class="badge">{{policy.id}}</span> {{policy.productCode }} {{ policy.productName }}
+  </li>
+  <div *ngIf="selectedPolicy">
+    <h2>
+      {{selectedPolicy.productName | uppercase}} is my best policy
+    </h2>
+    <button (click)="goDetail()">View Details</button>
+  </div>
+</ul>

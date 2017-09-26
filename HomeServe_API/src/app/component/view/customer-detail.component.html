@@ -1,0 +1,23 @@
+<div *ngIf="customer">
+  <h2>{{customer.firstName}} details!</h2>
+  <div><label>id: </label>{{customer.id}}</div>
+  <div><label>civilité: </label>{{customer.title}}</div>
+  <div><label>nom: </label>{{customer.lastName}}</div>
+  <div><label>prénom: </label>{{customer.firstName}}</div>
+  <div><label>email: </label>{{customer.email}}</div>
+  <label>contrats: </label>
+  <div class="policies">
+    <li *ngFor="let policy of customer.policies"
+             (click)="onSelect(policy)"
+             [class.selected]="policy === selectedPolicy">
+    <span class="badge">{{policy.id}}</span>
+    </li>
+  </div>
+</div>
+<button (click)="goBack()">Back</button>
+<div *ngIf="selectedPolicy">
+  <h2>
+    {{selectedPolicy.id | uppercase}} is my best policy
+  </h2>
+  <button (click)="goDetail()">View Details</button>
+</div>
